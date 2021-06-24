@@ -4,8 +4,8 @@
     <div v-for="(item, index) in data" :key="index" class="wrap">
       <div>{{ item.icon }}</div>
       <div>
-        <div>{{ item.key }}</div>
-        <div>{{ item.value }}</div>
+        <div class="name">{{ item.key }}</div>
+        <div class="num">{{ item.value }}</div>
       </div>
     </div>
   </div>
@@ -68,5 +68,14 @@ export default {
   border: 2px solid #00519c;
   display: flex;
   font-size: 12px;
+  .name {
+    font-size: 32px;
+    font-weight: 600;
+    color: #319df6;
+  }
+  .num {
+    font-size: 26px;
+    font-weight: 500;
+  }
 }
 </style>

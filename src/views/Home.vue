@@ -2,7 +2,7 @@
 <template>
   <div class="home-container">
     <div class="home-title"><span>桂林市退役军人就业创业服务平台</span></div>
-    <wireframe :height="'178'">
+    <wireframe :styleCss="styleCss">
       <homeHead></homeHead>
     </wireframe>
   </div>
@@ -14,6 +14,12 @@ export default {
   components: {},
   data () {
     return {
+      styleCss: {
+        height: '178',
+        display: 'flex',
+        'justify-ontent': 'space-around',
+        'align-items': 'center',
+      }
     };
   },
 
