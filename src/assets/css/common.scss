@@ -1,0 +1,42 @@
+.lineBox {
+    width: 100%;
+    border: 1px solid #00519C;
+    background: rgba(3, 16, 93, 0.3);
+    position: relative;
+    span:nth-child(1) {
+        position: absolute;
+        left: -5px;
+        top: -5px;
+        padding: 15px;
+        border-style: solid;
+        border-color: #319DF6;
+        border-width: 2px 0 0 2px;
+    }
+    span:nth-child(2) {
+        position: absolute;
+        right: -5px;
+        top: -5px;
+        padding: 15px;
+        border-style: solid;
+        border-color: #319DF6;
+        border-width: 2px 2px 0 0;
+    }
+    span:nth-child(3) {
+        position: absolute;
+        right: -5px;
+        bottom: -3px;
+        padding: 15px;
+        border-style: solid;
+        border-color: #319DF6;
+        border-width: 0 2px 2px 0;
+    }
+    span:nth-child(4) {
+        position: absolute;
+        left: -5px;
+        bottom: -3px;
+        padding: 15px;
+        border-style: solid;
+        border-color: #319DF6;
+        border-width: 0 0 2px 2px;
+    }
+}
