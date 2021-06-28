@@ -16,6 +16,7 @@
           </wireframe>
           <wireframe class="m-t30 chartLeftBottomCss">
             <chartTitle title="求职者学历占比"></chartTitle>
+            <educationEchart></educationEchart>
           </wireframe>
         </div>
         <div class="home-chart-right">

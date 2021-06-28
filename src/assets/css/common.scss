@@ -40,3 +40,9 @@
         border-width: 0 0 2px 2px;
     }
 }
+
+//图表的初始样式
+.chartInit {
+    width: 100%;
+    height: calc(100% - 128px);
+}
