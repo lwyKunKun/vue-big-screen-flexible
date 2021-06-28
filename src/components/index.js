@@ -4,11 +4,13 @@
  * 日期: 20201-6-24
  */
 import wireframe from '@/components/wireframe/index.vue' //线框
-import homeHead from '@/components/head/index.vue'
+import homeHead from '@/components/head/index.vue' //头部
+import chartTitle from '@/components/chartTitle/index.vue' //图表标题
 
 const components = {
     wireframe,
     homeHead,
+    chartTitle,
 }
 
 const install = (Vue = {}) => {

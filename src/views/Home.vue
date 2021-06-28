@@ -2,9 +2,33 @@
 <template>
   <div class="home-container">
     <div class="home-title"><span>桂林市退役军人就业创业服务平台</span></div>
-    <wireframe :styleCss="styleCss">
-      <homeHead></homeHead>
-    </wireframe>
+    <div class="home-content">
+      <div class="home-head">
+        <wireframe class="headStyleCss">
+          <homeHead></homeHead>
+        </wireframe>
+      </div>
+      <div class="home-chart">
+        <div class="home-chart-left">
+          <wireframe class="chartLeftTopCss">
+            <chartTitle></chartTitle>
+          </wireframe>
+          <wireframe class="m-t30 chartLeftBottomCss"></wireframe>
+        </div>
+        <div class="home-chart-right">
+          <div class="chart-right-top">
+            <wireframe class="m-l30 register"></wireframe>
+            <wireframe class="m-l30 post"></wireframe>
+            <wireframe class="m-l30 salary"></wireframe>
+            <wireframe class="m-l30 company"></wireframe>
+          </div>
+          <div class="chart-right-bottom">
+            <wireframe class="m-l30 business"></wireframe>
+            <wireframe class="m-l30 train"></wireframe>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -14,12 +38,6 @@ export default {
   components: {},
   data () {
     return {
-      styleCss: {
-        height: '178',
-        display: 'flex',
-        'justify-ontent': 'space-around',
-        'align-items': 'center',
-      }
     };
   },
 
@@ -51,6 +69,70 @@ export default {
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       text-shadow: 0px 0px 6px rgba(20, 113, 193, 0.3);
+    }
+  }
+  .home-content {
+    width: 100%;
+    height: 100%;
+    padding: 0 50px;
+    .home-head {
+      width: 100%;
+      margin: 30px 0;
+      .headStyleCss {
+        width: 100%;
+        height: 178px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+      }
+    }
+    .home-chart {
+      width: 100%;
+      display: flex;
+      .home-chart-left {
+        width: 18%;
+        .chartLeftTopCss {
+          height: 1230px;
+          width: 100%;
+        }
+        .chartLeftBottomCss {
+          width: 100%;
+          height: 456px;
+        }
+      }
+      .home-chart-right {
+        width: 82%;
+        .chart-right-top {
+          display: flex;
+          width: 100%;
+          height: 898px;
+          justify-content: space-between;
+          .register {
+            width: 25%;
+          }
+          .post {
+            width: 30%;
+          }
+          .salary {
+            width: 25%;
+          }
+          .company {
+            width: 19%;
+          }
+        }
+        .chart-right-bottom {
+          display: flex;
+          height: 788px;
+          margin-top: 30px;
+          justify-content: space-between;
+          .business {
+            width: 56%;
+          }
+          .train {
+            width: 43%;
+          }
+        }
+      }
     }
   }
 }

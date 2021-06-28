@@ -42,7 +42,7 @@ module.exports = {
             postcss: {
                 plugins: [
                     // 根标签字号大小根据设计稿宽度/flexible.js里的份数得到，这里假定设计稿宽度为3840 3840/10 = 384px
-                    require('postcss-px2rem')({ remUnit: 384 }), // 换算的基数
+                    // require('postcss-px2rem')({ remUnit: 384 }), // 换算的基数
                     // 兼容浏览器，添加前缀
                     require('autoprefixer')({
                         overrideBrowserslist: [

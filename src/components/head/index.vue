@@ -2,7 +2,7 @@
 <template>
   <div class="header-container">
     <div v-for="(item, index) in data" :key="index" class="wrap">
-      <div>{{ item.icon }}</div>
+      <div class="icon">图片</div>
       <div>
         <div class="name">{{ item.key }}</div>
         <div class="num">{{ item.value }}</div>
@@ -60,14 +60,26 @@ export default {
 .header-container {
   width: 100%;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
+  align-items: center;
 }
 .wrap {
-  width: 724px;
+  width: calc((100% - 100px) / 5);
   height: 138px;
   border: 2px solid #00519c;
   display: flex;
-  font-size: 12px;
+  align-items: center;
+  padding-left: 47px;
+  .icon {
+    width: 104px;
+    height: 104px;
+    border: 2px solid #00519c;
+    border-radius: 50%;
+    font-size: 30px;
+    text-align: center;
+    line-height: 104px;
+    margin-right: 45px;
+  }
   .name {
     font-size: 32px;
     font-weight: 600;
@@ -76,6 +88,7 @@ export default {
   .num {
     font-size: 26px;
     font-weight: 500;
+    margin-top: 10px;
   }
 }
 </style>
