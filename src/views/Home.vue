@@ -11,20 +11,35 @@
       <div class="home-chart">
         <div class="home-chart-left">
           <wireframe class="chartLeftTopCss">
-            <chartTitle></chartTitle>
+            <chartTitle title="行业30天投递人数排行"></chartTitle>
+            <businessEchart></businessEchart>
           </wireframe>
-          <wireframe class="m-t30 chartLeftBottomCss"></wireframe>
+          <wireframe class="m-t30 chartLeftBottomCss">
+            <chartTitle title="求职者学历占比"></chartTitle>
+          </wireframe>
         </div>
         <div class="home-chart-right">
           <div class="chart-right-top">
-            <wireframe class="m-l30 register"></wireframe>
-            <wireframe class="m-l30 post"></wireframe>
-            <wireframe class="m-l30 salary"></wireframe>
-            <wireframe class="m-l30 company"></wireframe>
+            <wireframe class="m-l30 register">
+              <chartTitle title="注册用户分布"></chartTitle>
+            </wireframe>
+            <wireframe class="m-l30 post">
+              <chartTitle title="职位需求人数TOP10"></chartTitle>
+            </wireframe>
+            <wireframe class="m-l30 salary">
+              <chartTitle title="新增职位平均薪酬TOP10"></chartTitle>
+            </wireframe>
+            <wireframe class="m-l30 company">
+              <chartTitle title="热门企业简历投递数"></chartTitle>
+            </wireframe>
           </div>
           <div class="chart-right-bottom">
-            <wireframe class="m-l30 business"></wireframe>
-            <wireframe class="m-l30 train"></wireframe>
+            <wireframe class="m-l30 business">
+              <chartTitle title="行业30天新增职位数"></chartTitle>
+            </wireframe>
+            <wireframe class="m-l30 train">
+              <chartTitle title="30天内培训课程播放人次排行"></chartTitle>
+            </wireframe>
           </div>
         </div>
       </div>
@@ -78,6 +93,7 @@ export default {
     .home-head {
       width: 100%;
       margin: 30px 0;
+      background: rgba(3, 16, 93, 0.3);
       .headStyleCss {
         width: 100%;
         height: 178px;
@@ -92,8 +108,10 @@ export default {
       .home-chart-left {
         width: 18%;
         .chartLeftTopCss {
-          height: 1230px;
           width: 100%;
+          height: 1230px;
+          box-sizing: border-box;
+          background-color: #080a38;
         }
         .chartLeftBottomCss {
           width: 100%;
@@ -134,6 +152,11 @@ export default {
         }
       }
     }
+  }
+  .chartCss {
+    width: 100%;
+    height: auto;
+    // background-color: pink;
   }
 }
 </style>

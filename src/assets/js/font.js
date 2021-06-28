@@ -1,7 +1,7 @@
-export const fontSize = (res, width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth) => {
+export const fontSize = function(size, defalteWidth = 3840) {
     let docEl = document.documentElement,
-        clientWidth = width
+        clientWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth
     if (!clientWidth) return
-    let fontSize = 100 * (clientWidth / 1920)
-    return res * fontSize
+    let fontSize = clientWidth / defalteWidth
+    return Number((size * fontSize).toFixed(3))
 }

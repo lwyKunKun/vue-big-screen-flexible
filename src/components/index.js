@@ -6,11 +6,13 @@
 import wireframe from '@/components/wireframe/index.vue' //线框
 import homeHead from '@/components/head/index.vue' //头部
 import chartTitle from '@/components/chartTitle/index.vue' //图表标题
+import businessEchart from '@/components/echart/business' //行业30天投递人数排行图表
 
 const components = {
     wireframe,
     homeHead,
     chartTitle,
+    businessEchart,
 }
 
 const install = (Vue = {}) => {
