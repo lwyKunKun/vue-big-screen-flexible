@@ -61,7 +61,7 @@ export default {
           axisLabel: {//Y轴文字的样式
             textStyle: {
               color: '#fff',
-              fontSize: this.$fontSize(24)
+              fontSize: this.$fontSize(24),
             },
           },
           axisLine: {//Y轴线的样式
@@ -110,4 +110,7 @@ export default {
 
 </script>
 <style lang='scss' scoped>
+.lwy {
+  width: 90% !important;
+}
 </style>

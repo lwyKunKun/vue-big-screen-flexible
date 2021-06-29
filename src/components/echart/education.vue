@@ -1,6 +1,6 @@
 <!-- 求职者学历占比图表 -->
 <template>
-  <div id="educationEchart" class="chartInit"></div>
+  <div id="educationEchart"></div>
 </template>
 
 <script>
@@ -10,7 +10,9 @@ export default {
 
   data () {
     return {
-      chart: ''
+      chart: '',
+      colorList: ['#FF7723', '#25D390', '#B83EE1', '#FFC600', '#41E2FF', '#0263FF'],
+      dataList: [5, 18, 6, 16, 50, 17]
     };
   },
 
@@ -25,90 +27,136 @@ export default {
     init () {
       let myChart = this.$echarts.init(document.getElementById('educationEchart'))
       this.chart = myChart
+      const that = this;
       let option = {
         grid: {
-          //   right: this.$fontSize(50),
-          //   left: this.$fontSize(20),
-          //   bottom: this.$fontSize(50),
+          right: this.$fontSize(70),
+          left: this.$fontSize(10),
+          bottom: this.$fontSize(20),
           containLabel: true,
         },
         xAxis: {
-          type: 'value',
-          splitLine: {//去除网格线
-            show: false
-          },
-          axisTick: {
-            show: true,
-          },
-          axisLine: {//Y轴线的样式
-            show: true,
-            lineStyle: {
-              type: 'solid',
-              color: 'rgba(49, 157, 246, 0.3)',//左边线的颜色
-              width: this.$fontSize(1)//坐标线的宽度
-            }
-          },
-          axisLabel: {//X轴文字的样式
-            textStyle: {
-              color: '#fff',
-              fontSize: this.$fontSize(24)
-            }
-          },
-
+          show: false,
         },
         yAxis: {
           type: 'category',
           axisLabel: {//Y轴文字的样式
             textStyle: {
               color: '#fff',
-              fontSize: this.$fontSize(26)
+              fontSize: this.$fontSize(24)
             },
           },
           axisLine: {//Y轴线的样式
             show: false,
-            lineStyle: {
-              type: 'solid',
-              color: 'rgba(49, 157, 246, 0.3)',//左边线的颜色
-              width: this.$fontSize(1)//坐标线的宽度
-            }
+          },
+          axisTick: {//刻度条
+            show: false,
           },
           data: ['硕士', '本科', '大专', '中专', '高中', '初中及以下']
         },
         series: [
           {
-            name: '',
             type: 'bar',
             itemStyle: {
-              //渐变色在下面修改，这里是透明度
-              color: new this.$echarts.graphic.LinearGradient(0, 0, 1, 0, [{ offset: 0, color: '#2755FF' }, { offset: 1, color: '#00AEFF' }]),
-              emphasis: {//鼠标悬停
-                color: new this.$echarts.graphic.LinearGradient(0, 0, 1, 0, [{ offset: 0, color: '#AB3661' }, { offset: 1, color: '#FF5E1F' }]),
+              color: '#091D4F',
+              borderWidth: this.$fontSize(2),
+              borderColor: '#003B72'
+            },
+            silent: false,
+            barGap: '-100%',//设置两个柱子重叠
+            data: [
+              {
+                value: 100,
+                label: {
+                  color: '#FF7723'
+                }
+              }, {
+                value: 100,
+                label: {
+                  color: '#25D390'
+                }
+              }, {
+                value: 100,
+                label: {
+                  color: '#B83EE1'
+                }
+              }, {
+                value: 100,
+                label: {
+                  color: '#FFC600'
+                }
+              }, {
+                value: 100,
+                label: {
+                  color: '#41E2FF'
+                }
+              }, {
+                value: 100,
+                label: {
+                  color: '#0263FF'
+                }
+              }],
+
+            label: {
+              show: true,
+              position: 'right',
+              distance: 15,
+              textStyle: {
+                fontSize: this.$fontSize(24),
+              },
+              color: ['#FF7723', '#25D390', '#B83EE1', '#FFC600', '#41E2FF', '#0263FF'],
+              formatter: (parmas) => {
+                return `${this.dataList[parmas.dataIndex]}%`
+              },
+
+            }
+          },
+          {
+            name: '',
+            type: 'bar',
+            itemStyle: {//柱条的颜色
+              color: (params) => {
+                return this.colorList[params.dataIndex];
               }
             },
             label: {
-              emphasis: {
-                show: true,
-                //数据在柱子头部加载
-                position: 'insideRight',
-                textStyle: {
-                  color: '#fff',
-                  fontSize: this.$fontSize(24),
-                }
-
+              show: false,
+              position: 'right',
+              textStyle: {
+                color: 'inherit',//label的颜色继承柱条的颜色
+                fontSize: this.$fontSize(24),
               },
-
-
             },
-
-            data: [10, 20, 100, 150, 200, 250, 400, 567, 923, 600, 456, 789, 345, 678, 567, 876, 906, 123, 712, 546]
+            data: this.dataList
           },
+
         ]
       };
       myChart.setOption(option)
+      series: [
+        {
+          name: '访问来源', type: 'pie', radius: '55%', center: ['50%', '50%'],
+          color: ["#1576d2", "#d14a82", "#26c1f2", "#a166ff", "#1271cc", "#272f67", "rgba(156, 43, 182, 1)"],
+          data: [{ value: 80, name: '华为' }, { value: 98, name: '苹果' },
+          { value: 10, name: '三星' }, { value: 80, name: '小米' },
+          { value: 35, name: '其他' }].sort(function (a, b) { return a.value - b.value; }),
+          label: {                // 这里定义了文本 百分比 是'value'样式的                
+            formatter: '{b}: {value|{d}}', rich: {                    // 这个'value'样式表示文字颜色为白色                    
+              value: { color: '#fff', }
+            }
+          },
+          labelLine: { lineStyle: { color: 'rgba(255, 255, 255, 0.3)' }, smooth: 0.2, length: 10, length2: 20 }
+        }]
+
+
     }
   }
 }
 
 </script>
 <style lang='scss' scoped>
+#educationEchart {
+  width: 100%;
+  height: calc(100% - 128px);
+}
 </style>

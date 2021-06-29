@@ -117,6 +117,7 @@ export default {
         .chartLeftBottomCss {
           width: 100%;
           height: 456px;
+          background-color: #080a38;
         }
       }
       .home-chart-right {
