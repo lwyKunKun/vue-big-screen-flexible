@@ -1,6 +1,6 @@
 <!-- 求职者学历占比图表 -->
 <template>
-  <div id="educationEchart"></div>
+  <div id="educationEchart" class="chartInit"></div>
 </template>
 
 <script>
@@ -108,7 +108,6 @@ export default {
               formatter: (parmas) => {
                 return `${this.dataList[parmas.dataIndex]}%`
               },
-
             }
           },
           {
@@ -155,8 +154,4 @@ export default {
 
 </script>
 <style lang='scss' scoped>
-#educationEchart {
-  width: 100%;
-  height: calc(100% - 128px);
-}
 </style>

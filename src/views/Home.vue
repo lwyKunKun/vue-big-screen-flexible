@@ -26,12 +26,15 @@
             </wireframe>
             <wireframe class="m-l30 post">
               <chartTitle title="职位需求人数TOP10"></chartTitle>
+              <postNeed></postNeed>
             </wireframe>
             <wireframe class="m-l30 salary">
               <chartTitle title="新增职位平均薪酬TOP10"></chartTitle>
+              <newPostMoney></newPostMoney>
             </wireframe>
             <wireframe class="m-l30 company">
               <chartTitle title="热门企业简历投递数"></chartTitle>
+              <hotCompany></hotCompany>
             </wireframe>
           </div>
           <div class="chart-right-bottom">
@@ -40,6 +43,7 @@
             </wireframe>
             <wireframe class="m-l30 train">
               <chartTitle title="30天内培训课程播放人次排行"></chartTitle>
+              <classPlay></classPlay>
             </wireframe>
           </div>
         </div>
