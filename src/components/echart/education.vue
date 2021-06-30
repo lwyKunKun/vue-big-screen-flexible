@@ -30,7 +30,7 @@ export default {
       const that = this;
       let option = {
         grid: {
-          right: this.$fontSize(70),
+          right: this.$fontSize(80),
           left: this.$fontSize(10),
           bottom: this.$fontSize(20),
           containLabel: true,
@@ -43,7 +43,7 @@ export default {
           axisLabel: {//Y轴文字的样式
             textStyle: {
               color: '#fff',
-              fontSize: this.$fontSize(24)
+              fontSize: this.$fontSize(26)
             },
           },
           axisLine: {//Y轴线的样式
@@ -102,7 +102,7 @@ export default {
               position: 'right',
               distance: 15,
               textStyle: {
-                fontSize: this.$fontSize(24),
+                fontSize: this.$fontSize(26),
               },
               color: ['#FF7723', '#25D390', '#B83EE1', '#FFC600', '#41E2FF', '#0263FF'],
               formatter: (parmas) => {
@@ -120,11 +120,11 @@ export default {
             },
             label: {
               show: false,
-              position: 'right',
-              textStyle: {
-                color: 'inherit',//label的颜色继承柱条的颜色
-                fontSize: this.$fontSize(24),
-              },
+              //   position: 'right',
+              //   textStyle: {
+              //     color: 'inherit',//label的颜色继承柱条的颜色
+              //     fontSize: this.$fontSize(24),
+              //   },
             },
             data: this.dataList
           },

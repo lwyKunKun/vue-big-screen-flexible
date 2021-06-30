@@ -91,7 +91,7 @@ export default {
                 position: 'insideRight',
                 textStyle: {
                   color: '#fff',
-                  fontSize: this.$fontSize(24),
+                  fontSize: this.$fontSize(26),
                 }
 
               },

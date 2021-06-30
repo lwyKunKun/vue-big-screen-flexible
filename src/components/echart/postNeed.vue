@@ -54,7 +54,7 @@ export default {
           axisLabel: {//X轴文字的样式
             textStyle: {
               color: '#fff',
-              fontSize: this.$fontSize(24)
+              fontSize: this.$fontSize(26)
             }
           },
 
@@ -64,7 +64,7 @@ export default {
           axisLabel: {//Y轴文字的样式
             textStyle: {
               color: '#fff',
-              fontSize: this.$fontSize(24),
+              fontSize: this.$fontSize(26),
             },
           },
           axisTick: {
@@ -86,9 +86,6 @@ export default {
             itemStyle: {
               //渐变色在下面修改，这里是透明度
               color: new this.$echarts.graphic.LinearGradient(0, 0, 1, 0, [{ offset: 0, color: '#15999C' }, { offset: 1, color: '#57F873' }]),
-              //   emphasis: {//鼠标悬停
-              //     color: new this.$echarts.graphic.LinearGradient(0, 0, 1, 0, [{ offset: 0, color: '#596BFF' }, { offset: 1, color: '#B83EE1' }]),
-              //   }
             },
             label: {
               emphasis: {
@@ -97,7 +94,7 @@ export default {
                 position: 'insideRight',
                 textStyle: {
                   color: '#fff',
-                  fontSize: this.$fontSize(24),
+                  fontSize: this.$fontSize(26),
                 }
 
               },

@@ -51,7 +51,7 @@ export default {
           axisLabel: {//X轴文字的样式
             textStyle: {
               color: '#fff',
-              fontSize: this.$fontSize(24)
+              fontSize: this.$fontSize(26)
             }
           },
           //   data: [0, 400, 800, 1200, 1600, 2000, 2400, 2800]
@@ -62,7 +62,7 @@ export default {
           axisLabel: {//Y轴文字的样式
             textStyle: {
               color: '#fff',
-              fontSize: this.$fontSize(24),
+              fontSize: this.$fontSize(26),
             },
           },
           axisLine: {//Y轴线的样式
@@ -92,7 +92,7 @@ export default {
                 position: 'insideRight',
                 textStyle: {
                   color: '#fff',
-                  fontSize: this.$fontSize(24),
+                  fontSize: this.$fontSize(26),
                 }
 
               },

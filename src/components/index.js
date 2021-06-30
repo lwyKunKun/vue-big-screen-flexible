@@ -12,6 +12,8 @@ import classPlay from '@/components/echart/classPlay' //30天内培训课程播�
 import postNeed from '@/components/echart/postNeed' //职位需求人数TOP10图表
 import newPostMoney from '@/components/echart/newPostMoney' //新增职位平均薪酬TOP10图表
 import hotCompany from '@/components/echart/hotCompany' //热门企业简历投递数图表
+import newAddPost from '@/components/echart/newAddPost' //行业30天新增职位数图表
+import mapEchart from '@/components/echart/map' //地图
 
 const components = {
     wireframe,
@@ -23,6 +25,8 @@ const components = {
     postNeed,
     newPostMoney,
     hotCompany,
+    newAddPost,
+    mapEchart,
 }
 
 const install = (Vue = {}) => {

@@ -41,7 +41,7 @@ export default {
           axisLabel: {//Y轴文字的样式
             textStyle: {
               color: '#fff',
-              fontSize: this.$fontSize(24),
+              fontSize: this.$fontSize(26),
             },
           },
           axisLine: {//Y轴线的样式
@@ -69,7 +69,7 @@ export default {
               position: 'right',
               textStyle: {
                 color: '#2396FF',
-                fontSize: this.$fontSize(24),
+                fontSize: this.$fontSize(26),
               },
               formatter: (parmas) => {
                 return `${parmas.data}元`

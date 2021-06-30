@@ -34,12 +34,8 @@ export default {
     init () {
       let myChart = this.$echarts.init(document.getElementById('hotCompanyEchart'))
       this.chart = myChart
-
       let option = {
         color: ['#0263FF', '#FF5E1F', '#8E30FF', '#25D390', '#00EEF5', '#FFC600', '#FF4196'],
-        tooltip: {
-          trigger: 'item'
-        },
         legend: {
           bottom: '4%',
           orient: 'vertical',//垂直
@@ -48,9 +44,20 @@ export default {
           itemHeight: this.$fontSize(16),
           textStyle: {
             color: '#fff',
-            fontSize: this.$fontSize(16),
+            fontSize: this.$fontSize(28),
+            rich: {
+              a: {
+                fontSize: this.$fontSize(22),
+                width: this.$fontSize(64)
+
+              },
+              b: {
+                fontSize: this.$fontSize(28)
+              }
+            }
 
           },
+          data: this.dataList.name,
           formatter: (params) => {
             if (this.dataList.length) {
               var value = ""
@@ -59,18 +66,18 @@ export default {
                   value = item.value
                 }
               })
-              return `  ${value}    ${params}`
-
+              return `  {a|${value}}    {b|${params}}`
             }
+          },
 
-          }
+
         },
         series: [
           {
             name: '',
             type: 'pie',
-            radius: ['30%', '70%'],
-            center: ['50%', '40%'],
+            radius: ['30%', '60%'],
+            center: ['50%', '30%'],
             avoidLabelOverlap: false,
             label: {
               show: false,

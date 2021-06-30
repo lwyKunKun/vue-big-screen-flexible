@@ -23,6 +23,7 @@
           <div class="chart-right-top">
             <wireframe class="m-l30 register">
               <chartTitle title="注册用户分布"></chartTitle>
+              <mapEchart></mapEchart>
             </wireframe>
             <wireframe class="m-l30 post">
               <chartTitle title="职位需求人数TOP10"></chartTitle>
@@ -40,6 +41,7 @@
           <div class="chart-right-bottom">
             <wireframe class="m-l30 business">
               <chartTitle title="行业30天新增职位数"></chartTitle>
+              <newAddPost></newAddPost>
             </wireframe>
             <wireframe class="m-l30 train">
               <chartTitle title="30天内培训课程播放人次排行"></chartTitle>
