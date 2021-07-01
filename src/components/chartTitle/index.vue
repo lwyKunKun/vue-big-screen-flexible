@@ -1,7 +1,10 @@
+
 <!-- 图表标题 -->
 <template>
   <div class="chart-title-container">
-    <div class="icon">图片</div>
+    <div class="icon">
+      <img src="../../assets/img/组 66@2x.png" alt="" />
+    </div>
     <div class="title">
       <div class="word">{{ title }}</div>
       <div class="bgc"></div>
@@ -17,7 +20,8 @@ export default {
     title: {
       type: String,
       required: true
-    }
+    },
+
   },
   components: {},
 
@@ -42,11 +46,9 @@ export default {
   .icon {
     width: 80px;
     height: 80px;
-    border: 1px solid #00519c;
-    box-shadow: 0px 0px 3px 0px rgba(0, 234, 255, 0.51);
-    border-radius: 50%;
     text-align: center;
     line-height: 80px;
+    z-index: 999;
   }
   .title {
     font-size: 36px;

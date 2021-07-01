@@ -1,8 +1,11 @@
+import img from '@/assets/img/icon1.jpeg';
 <!-- 头部 -->
 <template>
   <div class="header-container">
     <div v-for="(item, index) in data" :key="index" class="wrap">
-      <div class="icon">图片</div>
+      <div class="icon">
+        <img :src="item.iconUrl" alt="" />
+      </div>
       <div>
         <div class="name">{{ item.key }}</div>
         <div class="num">{{ item.value }}</div>
@@ -22,29 +25,35 @@ export default {
         {
           icon: '1',
           key: '专家数量',
-          value: '879'
+          value: '879',
+          iconUrl: require('../../assets/img/专家数量@2x.png')
         },
         {
           icon: '2',
           key: '知识库数量',
-          value: '1245'
+          value: '1245',
+          iconUrl: require('../../assets/img/知识库数量@2x.png')
         },
         {
           icon: '3',
           key: '注册用户总数',
-          value: '51410'
+          value: '51410',
+          iconUrl: require('../../assets/img/注册用户总数@2x.png')
         },
         {
           icon: '4',
           key: '注册企业总数',
-          value: '51092'
+          value: '51092',
+          iconUrl: require('../../assets/img/注册企业总数@2x.png')
         },
         {
           icon: '5',
           key: '累计简历投递数量',
-          value: '69760'
+          value: '69760',
+          iconUrl: require('../../assets/img/累计简历投递数量@2x.png')
         },
-      ]
+      ],
+
     };
   },
 
@@ -73,8 +82,6 @@ export default {
   .icon {
     width: 104px;
     height: 104px;
-    border: 2px solid #00519c;
-    border-radius: 50%;
     font-size: 30px;
     text-align: center;
     line-height: 104px;

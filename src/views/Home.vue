@@ -78,8 +78,8 @@ export default {
   .home-title {
     width: 100%;
     height: 156px;
-    background: linear-gradient(0deg, #044392, #00061b);
-    opacity: 0.64;
+    background: url('../assets/img/顶部 @2x.png') no-repeat;
+    background-size: 100% 100%;
     font-size: 66px;
     font-family: 'PingFang SC';
     font-weight: bold;
@@ -87,10 +87,11 @@ export default {
     text-align: center;
     line-height: 156px;
     span {
+      color: #12bbfb;
+      text-shadow: 0px 0px 6px rgba(20, 113, 193, 0.3);
       background: linear-gradient(0deg, #319df5 0.68359375%, #00ccff 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      text-shadow: 0px 0px 6px rgba(20, 113, 193, 0.3);
     }
   }
   .home-content {
@@ -118,7 +119,8 @@ export default {
           width: 100%;
           height: 1230px;
           box-sizing: border-box;
-          background-color: #080a38;
+          //   background-image: url('../assets/img/b j@2x.png') no-repeat;
+          //   background-size: 100% 100%;
         }
         .chartLeftBottomCss {
           width: 100%;

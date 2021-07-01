@@ -5,7 +5,11 @@
 
 <script>
 import guilinJson from '@/assets/json/guilin.json'
-import icon1 from '@/assets/img/icon1.jpeg'
+import icon1 from '@/assets/img/1@2x.png'
+import icon2 from '@/assets/img/2@2x.png'
+import icon3 from '@/assets/img/3@2x.png'
+import icon4 from '@/assets/img/4@2x.png'
+import icon5 from '@/assets/img/5@2x.png'
 export default {
   name: 'mapEchart',
   components: {},
@@ -34,62 +38,52 @@ export default {
           data: [
             {
               name: "秀峰区",
-              value: [110.292445, 25.278544]
+              value: [110.22265, 25.30229]
             }
           ],
-          scale: 0.1,
-          rotation: 90
         },
         {
           name: "叠彩区",
-          image: 'img',
+          image: icon2,
           data: [
             {
               name: "叠彩区",
-              value: [110.300783, 25.301334]
+              value: [110.300783, 25.358905]
             }
           ],
-          scale: 1,
-          rotation: 90
         },
         {
           name: "象山区",
-          image: '@/assets/img/icon1.jpeg',
+          image: icon3,
           data: [
             {
               name: "象山区",
-              value: [110.284882, 25.261986]
+              value: [110.236727, 25.210271]
             },
 
           ],
-          scale: 1,
-          rotation: 90
         },
         {
           name: "七星区",
-          image: '@/assets/img/icon1.jpeg',
+          image: icon4,
           data: [
             {
               name: "七星区",
-              value: [110.317577, 25.254339]
+              value: [110.317577, 25.293844]
             },
 
           ],
-          scale: 1,
-          rotation: 90
         },
         {
           name: "雁山区",
-          image: '@/assets/img/icon1.jpeg',
+          image: icon5,
           data: [
             {
               name: "雁山区",
-              value: [110.305667, 25.077646]
+              value: [110.305667, 25.10248]
             },
 
           ],
-          scale: 1,
-          rotation: 90
         }
       ];
       const series = seriesList.map((v) => {
@@ -143,17 +137,17 @@ export default {
               }
             }, {
               name: '叠彩区',
-              icon: 'image://../../../static/img/3.png'
+              icon: `image://${icon2}`
             }, {
               name: '象山区',
-              icon: 'image://../../../static/img/7.png'
+              icon: `image://${icon3}`
             }, {
               name: '七星区',
-              icon: 'image://../../../static/img/6.png'
+              icon: `image://${icon4}`
             },
             {
               name: '雁山区',
-              icon: 'image://../../../static/img/6.png'
+              icon: `image://${icon5}`
             }
           ],
         },
