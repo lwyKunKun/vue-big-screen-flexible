@@ -5,6 +5,7 @@
 
 <script>
 import guilinJson from '@/assets/json/guilin.json'
+import icon1 from '@/assets/img/icon1.jpeg'
 export default {
   name: 'mapEchart',
   components: {},
@@ -26,27 +27,135 @@ export default {
       let myChart = this.$echarts.init(document.getElementById('map'))
       this.chart = myChart;
       this.$echarts.registerMap("guilin", guilinJson);
-      let geoCoordMap = {
-        '秀峰区': [110.292445, 25.278544],
-        '叠彩区': [110.300783, 25.301334],
-        '象山区': [110.284882, 25.261986],
-        '七星区': [110.317577, 25.254339],
-        '雁山区': [110.305667, 25.077646]
-      };
-      var areaList = ['秀峰区', '叠彩区', '象山区', '七星区', '雁山区']
+      const seriesList = [
+        {
+          name: "秀峰区",
+          image: icon1,
+          data: [
+            {
+              name: "秀峰区",
+              value: [110.292445, 25.278544]
+            }
+          ],
+          scale: 0.1,
+          rotation: 90
+        },
+        {
+          name: "叠彩区",
+          image: 'img',
+          data: [
+            {
+              name: "叠彩区",
+              value: [110.300783, 25.301334]
+            }
+          ],
+          scale: 1,
+          rotation: 90
+        },
+        {
+          name: "象山区",
+          image: '@/assets/img/icon1.jpeg',
+          data: [
+            {
+              name: "象山区",
+              value: [110.284882, 25.261986]
+            },
+
+          ],
+          scale: 1,
+          rotation: 90
+        },
+        {
+          name: "七星区",
+          image: '@/assets/img/icon1.jpeg',
+          data: [
+            {
+              name: "七星区",
+              value: [110.317577, 25.254339]
+            },
+
+          ],
+          scale: 1,
+          rotation: 90
+        },
+        {
+          name: "雁山区",
+          image: '@/assets/img/icon1.jpeg',
+          data: [
+            {
+              name: "雁山区",
+              value: [110.305667, 25.077646]
+            },
+
+          ],
+          scale: 1,
+          rotation: 90
+        }
+      ];
+      const series = seriesList.map((v) => {
+        const that = this;
+        return {
+          name: v.name,
+          type: "custom", //配置显示方式为用户自定义
+          coordinateSystem: "geo",
+          renderItem (params, api) {
+            //具体实现自定义图标的方法
+            return {
+              type: "image",
+              style: {
+                image: v.image,
+                x: api.coord([
+                  v.data[params.dataIndex].value[0],
+                  v.data[params.dataIndex].value[1],
+                ])[0],
+                y: api.coord([
+                  v.data[params.dataIndex].value[0],
+                  v.data[params.dataIndex].value[1]
+                ])[1],
+                width: that.$fontSize(22),
+                height: that.$fontSize(22)
+              },
+
+
+            };
+          },
+          data: v.data
+        };
+      });
       //模拟数据
       let option = { // 进行相关配置
-        color: [],
         legend: {
           show: true,
-          icon: 'circle',
           orient: 'vertical',//垂直
           bottom: '10%',
           right: '10%',
+          itemWidth: this.$fontSize(22),
+          itemHeight: this.$fontSize(22),
           textStyle: {
             color: '#fff',
             fontSize: this.$fontSize(24)
           },
+          data: [
+            {
+              name: '秀峰区',
+              icon: `image://${icon1}`,
+              lineStyle: {
+              }
+            }, {
+              name: '叠彩区',
+              icon: 'image://../../../static/img/3.png'
+            }, {
+              name: '象山区',
+              icon: 'image://../../../static/img/7.png'
+            }, {
+              name: '七星区',
+              icon: 'image://../../../static/img/6.png'
+            },
+            {
+              name: '雁山区',
+              icon: 'image://../../../static/img/6.png'
+            }
+          ],
         },
         geo: { // 这个是重点配置区
           map: 'guilin', // 表示中国地图
@@ -85,111 +194,7 @@ export default {
 
         },
         //滑动显示数据
-        series: [
-          {
-            name: '秀峰区',
-            type: 'custom',
-            coordinateSystem: 'geo',
-            renderItem (params, api) {
-              //具体实现自定义图标的方法
-              return {
-                type: 'image',
-                style: {
-                  image: '@/assets/img/icon1.jpeg', // 自定义的图片地址
-                  x: api.coord([v.data[params.dataIndex].value[0], v.data[params.dataIndex].value[1]])[0],   // 数据的设置
-                  y: api.coord([v.data[params.dataIndex].value[0], v.data[params.dataIndex].value[1]])[1],
-                },
-              };
-            },
-
-
-            // cursor: "pointer",//鼠标放上去的效果
-            label: {
-              show: false,
-              emphasis: {//滑过展示
-                show: false
-              }
-            },
-            itemStyle: {
-            },
-
-          },
-          {
-            name: '叠彩区',
-            type: 'scatter',
-            coordinateSystem: 'geo',
-            color: "#e1ebe3",//点的颜色
-            symbolSize: this.$fontSize(25),//点的大小
-            symbol: "pin",//点的样式
-            // cursor: "pointer",//鼠标放上去的效果
-            label: {
-              show: false,
-              emphasis: {//滑过展示
-                show: false
-              }
-            },
-            itemStyle: {
-            },
-
-          },
-          {
-            name: '象山区',
-            type: 'scatter',
-            coordinateSystem: 'geo',
-            color: "#e1ebe3",//点的颜色
-            symbolSize: this.$fontSize(25),//点的大小
-            symbol: "pin",//点的样式
-            // cursor: "pointer",//鼠标放上去的效果
-            label: {
-              show: false,
-              emphasis: {//滑过展示
-                show: false
-              }
-            },
-            itemStyle: {
-            },
-
-          },
-          {
-            name: '七星区',
-            type: 'scatter',
-            coordinateSystem: 'geo',
-            color: "#e1ebe3",//点的颜色
-            symbolSize: this.$fontSize(25),//点的大小
-            symbol: "pin",//点的样式
-            // cursor: "pointer",//鼠标放上去的效果
-            label: {
-              show: false,
-              emphasis: {//滑过展示
-                show: false
-              }
-            },
-            itemStyle: {
-            },
-
-          },
-          {
-            name: '雁山区',
-            type: 'scatter',
-            coordinateSystem: 'geo',
-            color: "#e1ebe3",//点的颜色
-            symbolSize: this.$fontSize(25),//点的大小
-            symbol: "pin",//点的样式
-            // cursor: "pointer",//鼠标放上去的效果
-            label: {
-              show: false,
-              emphasis: {//滑过展示
-                show: false
-              }
-            },
-            itemStyle: {
-            },
-
-          },
-
-
-
-        ],
+        series
       }
       myChart.setOption(option)
 
