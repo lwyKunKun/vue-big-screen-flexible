@@ -25,6 +25,7 @@ export default {
     init () {
       let myChart = this.$echarts.init(document.getElementById('businessEchart'))
       this.chart = myChart
+      const dataList = [10, 20, 100, 150, 200, 250, 400, 567, 923, 600, 456, 789, 345, 678, 567, 876, 906, 123, 712, 546]
       let option = {
         grid: {
           right: this.$fontSize(50),
@@ -78,13 +79,28 @@ export default {
             name: '',
             type: 'bar',
             itemStyle: {
-              //渐变色在下面修改，这里是透明度
-              color: new this.$echarts.graphic.LinearGradient(0, 0, 1, 0, [{ offset: 0, color: '#2755FF' }, { offset: 1, color: '#00AEFF' }]),
-              emphasis: {//鼠标悬停
-                color: new this.$echarts.graphic.LinearGradient(0, 0, 1, 0, [{ offset: 0, color: '#AB3661' }, { offset: 1, color: '#FF5E1F' }]),
+              color: (params) => {
+                if (Math.max(...dataList) == params.value) {
+                  return new this.$echarts.graphic.LinearGradient(0, 0, 1, 0, [{ offset: 0, color: '#AB3661' }, { offset: 1, color: '#FF5E1F' }])
+                } else {
+                  return new this.$echarts.graphic.LinearGradient(0, 0, 1, 0, [{ offset: 0, color: '#2755FF' }, { offset: 1, color: '#00AEFF' }])
+                }
               }
             },
             label: {
+              position: 'insideRight',
+              show: true,
+              textStyle: {
+                color: '#fff',
+                fontSize: this.$fontSize(26),
+              },
+              formatter: (params) => {
+                if (Math.max(...dataList) == params.value) {
+                  return params.value
+                } else {
+                  return ''
+                }
+              },
               emphasis: {
                 show: true,
                 //数据在柱子头部加载
@@ -92,14 +108,16 @@ export default {
                 textStyle: {
                   color: '#fff',
                   fontSize: this.$fontSize(26),
-                }
-
+                },
+                formatter: (params) => {
+                  return params.value
+                },
               },
 
 
             },
 
-            data: [10, 20, 100, 150, 200, 250, 400, 567, 923, 600, 456, 789, 345, 678, 567, 876, 906, 123, 712, 546]
+            data: dataList
           },
         ]
       };
@@ -110,7 +128,4 @@ export default {
 
 </script>
 <style lang='scss' scoped>
-.lwy {
-  width: 90% !important;
-}
 </style>

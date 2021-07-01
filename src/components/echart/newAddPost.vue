@@ -96,10 +96,10 @@ export default {
           symbol: 'none',//不显示标记图形
           areaStyle: {//阴影区域
             color: new this.$echarts.graphic.LinearGradient(0, 0, 0, 1, [{
-              offset: 0,
+              offset: 1,
               color: '#11CBFF'
             }, {
-              offset: 1,
+              offset: 0,
               color: 'rgba(150, 0, 255, 0.4)'
             }], false),
           },

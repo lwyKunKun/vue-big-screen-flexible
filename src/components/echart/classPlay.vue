@@ -25,6 +25,7 @@ export default {
     init () {
       let myChart = this.$echarts.init(document.getElementById('classPlayEchart'))
       this.chart = myChart
+      const dataList = [1000, 588, 1800, 2200, 2895, 599, 2600, 1000]
       let option = {
         grid: {
           right: this.$fontSize(50),
@@ -79,13 +80,28 @@ export default {
             name: '',
             type: 'bar',
             itemStyle: {
-              //渐变色在下面修改，这里是透明度
-              color: new this.$echarts.graphic.LinearGradient(0, 0, 1, 0, [{ offset: 0, color: '#2755FF' }, { offset: 1, color: '#00AEFF' }]),
-              emphasis: {//鼠标悬停
-                color: new this.$echarts.graphic.LinearGradient(0, 0, 1, 0, [{ offset: 0, color: '#596BFF' }, { offset: 1, color: '#B83EE1' }]),
+              color: (params) => {
+                if (Math.max(...dataList) == params.value) {
+                  return new this.$echarts.graphic.LinearGradient(0, 0, 1, 0, [{ offset: 0, color: '#596BFF' }, { offset: 1, color: '#B83EE1' }])
+                } else {
+                  return new this.$echarts.graphic.LinearGradient(0, 0, 1, 0, [{ offset: 0, color: '#2755FF' }, { offset: 1, color: '#00AEFF' }])
+                }
               }
             },
             label: {
+              position: 'insideRight',
+              show: true,
+              textStyle: {
+                color: '#fff',
+                fontSize: this.$fontSize(26),
+              },
+              formatter: (params) => {
+                if (Math.max(...dataList) == params.value) {
+                  return params.value
+                } else {
+                  return ''
+                }
+              },
               emphasis: {
                 show: true,
                 //数据在柱子头部加载
@@ -93,14 +109,16 @@ export default {
                 textStyle: {
                   color: '#fff',
                   fontSize: this.$fontSize(26),
-                }
-
-              },
+                },
+                formatter: (params) => {
+                  return params.value
+                },
+              }
 
 
             },
 
-            data: [1000, 588, 1800, 2200, 2895, 599, 2600, 1000]
+            data: dataList
           },
         ]
       };

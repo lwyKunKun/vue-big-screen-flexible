@@ -30,8 +30,8 @@ export default {
       const that = this;
       let option = {
         grid: {
-          right: this.$fontSize(80),
-          left: this.$fontSize(10),
+          right: this.$fontSize(120),
+          left: this.$fontSize(40),
           bottom: this.$fontSize(20),
           containLabel: true,
         },
@@ -100,7 +100,7 @@ export default {
             label: {
               show: true,
               position: 'right',
-              distance: 15,
+              distance: this.$fontSize(26),
               textStyle: {
                 fontSize: this.$fontSize(26),
               },
