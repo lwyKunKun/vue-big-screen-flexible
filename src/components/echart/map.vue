@@ -106,8 +106,8 @@ export default {
                   v.data[params.dataIndex].value[0],
                   v.data[params.dataIndex].value[1]
                 ])[1],
-                width: that.$fontSize(22),
-                height: that.$fontSize(22)
+                width: 22,
+                height: 22
               },
 
 
@@ -123,11 +123,11 @@ export default {
           orient: 'vertical',//垂直
           bottom: '10%',
           right: '10%',
-          itemWidth: this.$fontSize(22),
-          itemHeight: this.$fontSize(22),
+          itemWidth: 22,
+          itemHeight: 22,
           textStyle: {
             color: '#fff',
-            fontSize: this.$fontSize(24)
+            fontSize: 24
           },
           data: [
             {
@@ -157,7 +157,7 @@ export default {
             show: true, // 是否显示对应地名
             textStyle: { //字体颜色
               color: '#000443',
-              fontSize: this.$fontSize(24)
+              fontSize: 24
             },
             formatter: (params) => {
               if (params.name == '秀峰区' || params.name == '叠彩区' || params.name == '象山区' || params.name == '七星区' || params.name == '雁山区') {
@@ -171,7 +171,7 @@ export default {
           zoom: 1.25,//地图大小
           roam: false,//是否鼠标进行缩放
           itemStyle: {
-            borderWidth: this.$fontSize(2), // 地图边框宽度
+            borderWidth: 2, // 地图边框宽度
             borderColor: '#2127A8', // 地图边框颜色
             areaColor: '#0086FC', // 地图颜色
           },

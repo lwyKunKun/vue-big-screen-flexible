@@ -27,9 +27,9 @@ export default {
       this.chart = myChart
       let option = {
         grid: {
-          right: this.$fontSize(90),
-          left: this.$fontSize(10),
-          bottom: this.$fontSize(50),
+          right: 90,
+          left: 10,
+          bottom: 50,
           containLabel: true,
         },
         xAxis: {
@@ -41,14 +41,14 @@ export default {
           axisLabel: {//Y轴文字的样式
             textStyle: {
               color: '#fff',
-              fontSize: this.$fontSize(26),
+              fontSize: 26,
             },
           },
           axisLine: {//Y轴线的样式
             lineStyle: {
               type: 'solid',
               color: 'rgba(49, 157, 246, 0.3)',//左边线的颜色
-              width: this.$fontSize(1)//坐标线的宽度
+              width: 1//坐标线的宽度
             }
           },
           axisTick: {
@@ -69,7 +69,7 @@ export default {
               position: 'right',
               textStyle: {
                 color: '#2396FF',
-                fontSize: this.$fontSize(26),
+                fontSize: 26,
               },
               formatter: (parmas) => {
                 return `${parmas.data}元`

@@ -1,4 +1,4 @@
-import img from '@/assets/img/icon1.jpeg';
+
 <!-- 头部 -->
 <template>
   <div class="header-container">

@@ -27,9 +27,9 @@ export default {
       this.chart = myChart
       let option = {
         grid: {
-          right: this.$fontSize(50),
-          left: this.$fontSize(20),
-          bottom: this.$fontSize(50),
+          right: 50,
+          left: 20,
+          bottom: 50,
           containLabel: true,
         },
         xAxis: {
@@ -48,13 +48,13 @@ export default {
             lineStyle: {
               type: 'solid',
               color: 'rgba(49, 157, 246, 0.3)',//左边线的颜色
-              width: this.$fontSize(1)//坐标线的宽度
+              width: 1//坐标线的宽度
             }
           },
           axisLabel: {//X轴文字的样式
             textStyle: {
               color: '#fff',
-              fontSize: this.$fontSize(26)
+              fontSize: 26
             }
           },
 
@@ -64,7 +64,7 @@ export default {
           axisLabel: {//Y轴文字的样式
             textStyle: {
               color: '#fff',
-              fontSize: this.$fontSize(26),
+              fontSize: 26,
             },
           },
           axisTick: {
@@ -74,7 +74,7 @@ export default {
             lineStyle: {
               type: 'solid',
               color: 'rgba(49, 157, 246, 0.3)',//左边线的颜色
-              width: this.$fontSize(1)//坐标线的宽度
+              width: 1//坐标线的宽度
             }
           },
           data: ['生产制造/工厂管理类', '技工类', '财务/税务/审计/统计类', '文教/科研类', '行政/文职/后勤类', '市场/营销/策划/推广类', '客服/技术支持类', '房地产开发/经纪/中介', '建筑/工程类', '销售']
@@ -94,7 +94,7 @@ export default {
                 position: 'insideRight',
                 textStyle: {
                   color: '#fff',
-                  fontSize: this.$fontSize(26),
+                  fontSize: 26,
                 }
 
               },

@@ -30,9 +30,9 @@ export default {
       const that = this;
       let option = {
         grid: {
-          right: this.$fontSize(120),
-          left: this.$fontSize(40),
-          bottom: this.$fontSize(20),
+          right: 120,
+          left: 40,
+          bottom: 20,
           containLabel: true,
         },
         xAxis: {
@@ -43,7 +43,7 @@ export default {
           axisLabel: {//Y轴文字的样式
             textStyle: {
               color: '#fff',
-              fontSize: this.$fontSize(26)
+              fontSize: 26
             },
           },
           axisLine: {//Y轴线的样式
@@ -59,7 +59,7 @@ export default {
             type: 'bar',
             itemStyle: {
               color: '#091D4F',
-              borderWidth: this.$fontSize(2),
+              borderWidth: 2,
               borderColor: '#003B72'
             },
             silent: false,
@@ -100,9 +100,9 @@ export default {
             label: {
               show: true,
               position: 'right',
-              distance: this.$fontSize(26),
+              distance: 26,
               textStyle: {
-                fontSize: this.$fontSize(26),
+                fontSize: 26,
               },
               color: ['#FF7723', '#25D390', '#B83EE1', '#FFC600', '#41E2FF', '#0263FF'],
               formatter: (parmas) => {
@@ -132,20 +132,6 @@ export default {
         ]
       };
       myChart.setOption(option)
-      series: [
-        {
-          name: '访问来源', type: 'pie', radius: '55%', center: ['50%', '50%'],
-          color: ["#1576d2", "#d14a82", "#26c1f2", "#a166ff", "#1271cc", "#272f67", "rgba(156, 43, 182, 1)"],
-          data: [{ value: 80, name: '华为' }, { value: 98, name: '苹果' },
-          { value: 10, name: '三星' }, { value: 80, name: '小米' },
-          { value: 35, name: '其他' }].sort(function (a, b) { return a.value - b.value; }),
-          label: {                // 这里定义了文本 百分比 是'value'样式的                
-            formatter: '{b}: {value|{d}}', rich: {                    // 这个'value'样式表示文字颜色为白色                    
-              value: { color: '#fff', }
-            }
-          },
-          labelLine: { lineStyle: { color: 'rgba(255, 255, 255, 0.3)' }, smooth: 0.2, length: 10, length2: 20 }
-        }]
 
 
     }

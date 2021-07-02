@@ -40,19 +40,19 @@ export default {
           bottom: '4%',
           orient: 'vertical',//垂直
           icon: 'rect',
-          itemWidth: this.$fontSize(16),
-          itemHeight: this.$fontSize(16),
+          itemWidth: 16,
+          itemHeight: 16,
           textStyle: {
             color: '#fff',
-            fontSize: this.$fontSize(28),
+            fontSize: 28,
             rich: {
               a: {
-                fontSize: this.$fontSize(22),
-                width: this.$fontSize(64)
+                fontSize: 22,
+                width: 64
 
               },
               b: {
-                fontSize: this.$fontSize(28)
+                fontSize: 28
               }
             }
 

@@ -27,9 +27,9 @@ export default {
       this.chart = myChart
       let option = {
         grid: {
-          right: this.$fontSize(30),
-          left: this.$fontSize(30),
-          bottom: this.$fontSize(20),
+          right: 30,
+          left: 30,
+          bottom: 20,
           containLabel: true,
         },
         xAxis: {
@@ -49,13 +49,13 @@ export default {
             lineStyle: {
               type: 'solid',
               color: 'linear-gradient(-3deg, #11CBFF, rgba(150, 0, 255, 0.4))',//左边线的颜色
-              width: this.$fontSize(1)//坐标线的宽度
+              width: 1//坐标线的宽度
             }
           },
           axisLabel: {//X轴文字的样式
             textStyle: {
               color: '#fff',
-              fontSize: this.$fontSize(26)
+              fontSize: 26
             },
             interval: 0,//坐标轴间隔
             rotate: 40,//文字倾斜，显示全部的x轴坐标文字
@@ -79,13 +79,13 @@ export default {
             lineStyle: {
               type: 'solid',
               color: 'linear-gradient(-3deg, #11CBFF, rgba(150, 0, 255, 0.4))',//左边线的颜色
-              width: this.$fontSize(1)//坐标线的宽度
+              width: 1//坐标线的宽度
             }
           },
           axisLabel: {//Y轴文字的样式
             textStyle: {
               color: '#fff',
-              fontSize: this.$fontSize(24)
+              fontSize: 24
             }
           },
         },
@@ -112,7 +112,7 @@ export default {
             itemStyle: {
               color: '#fff',
               borderColor: '#FF7723',
-              borderWidth: this.$fontSize(5),
+              borderWidth: 5,
               shadowColor: 'rgba(43, 77, 160, 0.8)',
             },
             label: {
@@ -123,7 +123,7 @@ export default {
               },
               rich: {
                 a: {
-                  fontSize: this.$fontSize(30),
+                  fontSize: 30,
                   color: '#00EEF5',
                 }
 

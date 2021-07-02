@@ -28,9 +28,9 @@ export default {
       const dataList = [1000, 588, 1800, 2200, 2895, 599, 2600, 1000]
       let option = {
         grid: {
-          right: this.$fontSize(50),
-          left: this.$fontSize(20),
-          bottom: this.$fontSize(50),
+          right: 50,
+          left: 20,
+          bottom: 50,
           containLabel: true,
         },
         xAxis: {
@@ -46,16 +46,15 @@ export default {
             lineStyle: {
               type: 'solid',
               color: 'rgba(49, 157, 246, 0.3)',//左边线的颜色
-              width: this.$fontSize(1)//坐标线的宽度
+              width: 1//坐标线的宽度
             }
           },
           axisLabel: {//X轴文字的样式
             textStyle: {
               color: '#fff',
-              fontSize: this.$fontSize(26)
+              fontSize: 26
             }
           },
-          //   data: [0, 400, 800, 1200, 1600, 2000, 2400, 2800]
 
         },
         yAxis: {
@@ -63,14 +62,14 @@ export default {
           axisLabel: {//Y轴文字的样式
             textStyle: {
               color: '#fff',
-              fontSize: this.$fontSize(26),
+              fontSize: 26,
             },
           },
           axisLine: {//Y轴线的样式
             lineStyle: {
               type: 'solid',
               color: 'rgba(49, 157, 246, 0.3)',//左边线的颜色
-              width: this.$fontSize(1)//坐标线的宽度
+              width: 1//坐标线的宽度
             }
           },
           data: ['办公软件', '新兴领域创业策略', '公务员任职培训', '公共管理能力', '互联网与新就业', '沟通表达能力提升', '安全生产意识', '办公软件操作']
@@ -93,7 +92,7 @@ export default {
               show: true,
               textStyle: {
                 color: '#fff',
-                fontSize: this.$fontSize(26),
+                fontSize: 26,
               },
               formatter: (params) => {
                 if (Math.max(...dataList) == params.value) {
@@ -108,7 +107,7 @@ export default {
                 position: 'insideRight',
                 textStyle: {
                   color: '#fff',
-                  fontSize: this.$fontSize(26),
+                  fontSize: 26,
                 },
                 formatter: (params) => {
                   return params.value

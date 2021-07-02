@@ -28,9 +28,9 @@ export default {
       const dataList = [10, 20, 100, 150, 200, 250, 400, 567, 923, 600, 456, 789, 345, 678, 567, 876, 906, 123, 712, 546]
       let option = {
         grid: {
-          right: this.$fontSize(50),
-          left: this.$fontSize(20),
-          bottom: this.$fontSize(50),
+          right: 50,
+          left: 20,
+          bottom: 50,
           containLabel: true,
         },
         xAxis: {
@@ -46,13 +46,13 @@ export default {
             lineStyle: {
               type: 'solid',
               color: 'rgba(49, 157, 246, 0.3)',//左边线的颜色
-              width: this.$fontSize(1)//坐标线的宽度
+              width: 1//坐标线的宽度
             }
           },
           axisLabel: {//X轴文字的样式
             textStyle: {
               color: '#fff',
-              fontSize: this.$fontSize(24)
+              fontSize: 24
             }
           },
 
@@ -62,14 +62,14 @@ export default {
           axisLabel: {//Y轴文字的样式
             textStyle: {
               color: '#fff',
-              fontSize: this.$fontSize(24),
+              fontSize: 24,
             },
           },
           axisLine: {//Y轴线的样式
             lineStyle: {
               type: 'solid',
               color: 'rgba(49, 157, 246, 0.3)',//左边线的颜色
-              width: this.$fontSize(1)//坐标线的宽度
+              width: 1//坐标线的宽度
             }
           },
           data: ['农业', '采矿业', '制造业', '水电气生产供应业', '建筑业', '交通运输储存', '信息软件服务业', '批发/零售业', '住宿/餐饮业', '金融业', '房地产业', '租赁/商务服务业', '科学/技术服务业', '水利/环境/公共设施业', '服务/修理/其他服务业', '教育', '卫生/社会工作', '文化/体育/娱乐业', '公共组织/社会保障', '国际组织']
@@ -92,7 +92,7 @@ export default {
               show: true,
               textStyle: {
                 color: '#fff',
-                fontSize: this.$fontSize(26),
+                fontSize: 26,
               },
               formatter: (params) => {
                 if (Math.max(...dataList) == params.value) {
@@ -107,7 +107,7 @@ export default {
                 position: 'insideRight',
                 textStyle: {
                   color: '#fff',
-                  fontSize: this.$fontSize(26),
+                  fontSize: 26,
                 },
                 formatter: (params) => {
                   return params.value
