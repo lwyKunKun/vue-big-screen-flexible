@@ -122,7 +122,7 @@ export default {
           show: true,
           orient: 'vertical',//垂直
           bottom: '10%',
-          right: '10%',
+          right: '5%',
           itemWidth: 22,
           itemHeight: 22,
           textStyle: {

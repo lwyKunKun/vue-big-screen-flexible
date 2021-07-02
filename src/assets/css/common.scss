@@ -39,6 +39,49 @@
         border-color: #319DF6;
         border-width: 0 0 2px 2px;
     }
+    &::before {
+        content: '';
+        background: url('../../assets/img/光  @2x.png');
+        background-size: 100% 100%;
+        width: 100px;
+        height: 5px;
+        position: absolute;
+        left: 100px;
+        top: -2px;
+    }
+    &::after {
+        content: '';
+        background: url('../../assets/img/光  @2x.png');
+        background-size: 100% 100%;
+        width: 100px;
+        height: 5px;
+        position: absolute;
+        right: 150px;
+        bottom: -2px;
+    }
+}
+
+.lineEffect {
+    span:nth-child(5) {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        background: url('../../assets/img/光2@2x.png') no-repeat;
+        background-size: 100% 100%;
+        width: 3px;
+        height: 436px;
+    }
+    span:nth-child(6) {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+        background: url('../../assets/img/光2@2x.png') no-repeat;
+        background-size: 100% 100%;
+        width: 3px;
+        height: 436px;
+    }
 }
 
 //图表的初始样式

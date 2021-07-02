@@ -4,7 +4,7 @@
     <div class="home-title"><span>桂林市退役军人就业创业服务平台</span></div>
     <div class="home-content">
       <div class="home-head">
-        <wireframe class="headStyleCss">
+        <wireframe class="headStyleCss" :isEchart="false">
           <homeHead></homeHead>
         </wireframe>
       </div>
@@ -98,34 +98,60 @@ export default {
     width: 100%;
     height: 100%;
     padding: 0 50px;
+
     .home-head {
       width: 100%;
       margin: 30px 0;
-      background: rgba(3, 16, 93, 0.3);
+      background-color: rgba(3, 16, 93, 0.3);
       .headStyleCss {
         width: 100%;
         height: 178px;
         display: flex;
         justify-content: space-around;
         align-items: center;
+        position: relative;
+        &::before {
+          content: '';
+          background: url('../assets/img/光  @2x.png');
+          background-size: 100% 100%;
+          width: 100px;
+          height: 5px;
+          position: absolute;
+          left: 119px;
+          top: -2px;
+        }
+        &::after {
+          content: '';
+          background: url('../assets/img/光  @2x.png');
+          background-size: 100% 100%;
+          width: 100px;
+          height: 5px;
+          position: absolute;
+          right: 119px;
+          bottom: -2px;
+        }
       }
     }
     .home-chart {
       width: 100%;
       display: flex;
+      background: url('../assets/img/b j@2x.png') no-repeat;
+      background-position: 50% 50%; /*这个是按从左往右，从上往下的百分比位置进行调整*/
+      background-size: 120% 120%; /*按比例缩放*/
       .home-chart-left {
         width: 18%;
         .chartLeftTopCss {
           width: 100%;
           height: 1230px;
           box-sizing: border-box;
-          //   background-image: url('../assets/img/b j@2x.png') no-repeat;
-          //   background-size: 100% 100%;
+          //   background-image: url('../assets/img/b j@2x.png');
+          //   background-size: cover;
+          background: rgba(3, 16, 93, 0.3);
         }
         .chartLeftBottomCss {
           width: 100%;
           height: 456px;
-          background-color: #080a38;
+          background: rgba(3, 16, 93, 0.3);
         }
       }
       .home-chart-right {
@@ -166,7 +192,6 @@ export default {
   .chartCss {
     width: 100%;
     height: auto;
-    // background-color: pink;
   }
 }
 </style>

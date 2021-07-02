@@ -4,6 +4,7 @@
 </template>
 
 <script>
+import bg from '@/assets/img/气泡@2x.png'
 export default {
   name: 'newAddPost',
   components: {},
@@ -27,9 +28,10 @@ export default {
       this.chart = myChart
       let option = {
         grid: {
+          top: '20%',
           right: 30,
           left: 30,
-          bottom: 20,
+          bottom: 10,
           containLabel: true,
         },
         xAxis: {
@@ -125,8 +127,13 @@ export default {
                 a: {
                   fontSize: 30,
                   color: '#00EEF5',
+                  padding: [20, 5, 30, 5],
+                  align: 'center',
+                  verticalAlign: 'middle',
+                  backgroundColor: {
+                    image: bg,
+                  },
                 }
-
               }
             },
             data: [{

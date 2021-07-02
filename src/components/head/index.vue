@@ -75,7 +75,8 @@ export default {
 .wrap {
   width: calc((100% - 100px) / 5);
   height: 138px;
-  border: 2px solid #00519c;
+  background-image: url('../../assets/img/框@2x.png');
+  background-size: 100% 100%;
   display: flex;
   align-items: center;
   padding-left: 47px;

@@ -1,10 +1,13 @@
+
 <!-- 线框组件 -->
 <template>
-  <div class="lineBox">
+  <div class="lineBox lineEffect">
     <span></span>
     <span></span>
     <span></span>
     <span></span>
+    <span v-if="isEchart"></span>
+    <span v-if="isEchart"></span>
     <slot></slot>
   </div>
 </template>
@@ -13,6 +16,10 @@
 export default {
   name: 'wireframe',
   props: {
+    isEchart: {
+      type: Boolean,
+      default: true
+    }
   },
   components: {},
 
